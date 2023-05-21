@@ -172,14 +172,14 @@ img {
   padding: 12px 24px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  transition: background-color var(--transition-duration-and-func), color var(--transition-duration-and-func), border var(--transition-duration-and-func), box-shadow var(--transition-duration-and-func);
+  transition: color var(--transition-duration-and-func), background-color var(--transition-duration-and-func), border-color var(--transition-duration-and-func), box-shadow var(--transition-duration-and-func);
 }
 
 .filter-button:hover,
 .filter-button:focus {
   background-color: var(--button-pressed-state-color-ocean);
   color: var(--text-white-color);
-  border: 1px solid transparent;
+  border: 1px solid var(--button-pressed-state-color-ocean);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
@@ -581,14 +581,15 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 584px;
+  min-height: 576px;
   background-color: #FCFCFC;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;  
+  border-radius: 4px;
+  transition: transform var(--transition-duration-and-func);
 }
 
 .modal-close-btn {
-  background: var(--border-color);
+  background-color: var(--border-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: 24px;
   height: 24px;
@@ -600,6 +601,23 @@ img {
   position: absolute;
   top: 24px;
   right: 24px;
+  transition: background-color var(--transition-duration-and-func), border var(--transition-duration-and-func);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--button-pressed-state-color-ocean);
+  border: none;
+}
+
+.modal-close-icon {
+  fill: currentColor;
+  transition: fill var(--transition-duration-and-func);
+}
+
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+  fill: var(--primary-white-background-color);
 }
 
 .is-hidden {
